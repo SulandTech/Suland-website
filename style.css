@@ -1,7 +1,7 @@
-/* ================================
+/* =========================================
    SULAND
    AI Robotics Engineering Partner
-   ================================ */
+   ========================================= */
 
 * {
     margin: 0;
@@ -34,47 +34,60 @@ body {
 }
 
 
-/* ================================
+/* =========================================
    Navigation
-   ================================ */
+   ========================================= */
 
 .navbar {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 10;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
 }
 
 .nav-container {
     height: 82px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
 .logo {
     color: #fff;
 
+    text-decoration: none;
+
     font-size: 26px;
+
     font-weight: 800;
+
     letter-spacing: 5px;
 }
 
 nav {
     display: flex;
-    gap: 34px;
+
+    gap: 32px;
 }
 
 nav a {
-    color: rgba(255, 255, 255, 0.82);
+    color:
+        rgba(255, 255, 255, 0.78);
 
     text-decoration: none;
 
     font-size: 14px;
+
     font-weight: 500;
 
     transition: 0.2s;
@@ -85,90 +98,109 @@ nav a:hover {
 }
 
 
-/* ================================
+/* =========================================
    Hero
-   ================================ */
+   ========================================= */
 
 .hero {
-    min-height: 720px;
+    min-height: 760px;
 
     display: flex;
+
     align-items: center;
+
+    color: #fff;
 
     background:
         radial-gradient(
-            circle at 75% 25%,
+            circle at 75% 20%,
             rgba(70, 120, 255, 0.30),
             transparent 30%
         ),
         radial-gradient(
-            circle at 20% 80%,
-            rgba(0, 180, 255, 0.15),
-            transparent 30%
+            circle at 15% 80%,
+            rgba(0, 180, 255, 0.12),
+            transparent 28%
         ),
         #080b12;
-
-    color: #fff;
 }
 
 .hero-content {
-    padding-top: 80px;
     max-width: 900px;
+
+    padding-top: 80px;
 }
 
 .eyebrow {
     margin-bottom: 22px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 3px;
+
     text-transform: uppercase;
 
-    opacity: 0.7;
+    opacity: 0.65;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 7vw, 88px);
+    max-width: 1000px;
+
+    font-size:
+        clamp(48px, 7vw, 88px);
 
     line-height: 1.02;
 
     letter-spacing: -4px;
 
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 .hero h1 span {
-    opacity: 0.55;
+    display: block;
+
+    opacity: 0.45;
 }
 
 .hero-text {
-    max-width: 720px;
+    max-width: 760px;
 
-    font-size: 20px;
+    font-size: 21px;
 
-    line-height: 1.7;
+    line-height: 1.65;
 
-    color: rgba(255, 255, 255, 0.72);
+    color:
+        rgba(255, 255, 255, 0.78);
 
-    margin-bottom: 42px;
+    margin-bottom: 12px;
+}
+
+.hero-text.secondary-text {
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    margin-bottom: 40px;
 }
 
 .hero-buttons {
     display: flex;
+
     gap: 16px;
 }
 
 .button {
     display: inline-block;
 
-    padding: 14px 24px;
+    padding: 14px 25px;
 
     border-radius: 4px;
 
     text-decoration: none;
 
     font-size: 14px;
+
     font-weight: 600;
 
     transition: 0.2s;
@@ -176,6 +208,7 @@ nav a:hover {
 
 .button.primary {
     background: #fff;
+
     color: #111;
 }
 
@@ -184,200 +217,29 @@ nav a:hover {
 }
 
 .button.secondary {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
     color: #fff;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.28);
 }
 
 .button.secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 }
 
 
-/* ================================
-   General Sections
-   ================================ */
+/* =========================================
+   Value Proposition
+   ========================================= */
 
-.section {
-    padding: 120px 0;
+.value-section {
+    padding: 110px 0;
+
+    background: #f4f5f7;
 }
 
-.section-header {
-    max-width: 720px;
-
-    margin-bottom: 70px;
-}
-
-.section-header h2 {
-    font-size: clamp(38px, 5vw, 64px);
-
-    line-height: 1.08;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 25px;
-}
-
-.section-header p {
-    font-size: 18px;
-
-    color: #666;
-
-    max-width: 650px;
-}
-
-
-/* ================================
-   Capabilities
-   ================================ */
-
-.capabilities-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 1px;
-
-    background: #ddd;
-
-    border: 1px solid #ddd;
-}
-
-.card {
-    background: #fff;
-
-    padding: 42px;
-
-    min-height: 300px;
-}
-
-.card-number {
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    color: #888;
-
-    margin-bottom: 55px;
-}
-
-.card h3 {
-    font-size: 23px;
-
-    margin-bottom: 15px;
-
-    line-height: 1.2;
-}
-
-.card p {
-    font-size: 15px;
-
-    color: #666;
-
-    line-height: 1.7;
-}
-
-
-/* ================================
-   Dark Section
-   ================================ */
-
-.dark {
-    background: #080b12;
-
-    color: #fff;
-}
-
-.light p {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.process-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(5, 1fr);
-
-    gap: 35px;
-}
-
-.process-step {
-    border-top:
-        1px solid rgba(255, 255, 255, 0.2);
-
-    padding-top: 25px;
-}
-
-.process-number {
-    font-size: 12px;
-
-    color: rgba(255, 255, 255, 0.45);
-
-    letter-spacing: 2px;
-
-    margin-bottom: 30px;
-}
-
-.process-step h3 {
-    font-size: 22px;
-
-    margin-bottom: 15px;
-}
-
-.process-step p {
-    font-size: 14px;
-
-    color: rgba(255, 255, 255, 0.55);
-}
-
-
-/* ================================
-   Partnership
-   ================================ */
-
-.partnership {
-    padding: 150px 0;
-
-    background: #f3f4f6;
-}
-
-.partnership-content {
-    max-width: 900px;
-}
-
-.partnership h2 {
-    font-size: clamp(42px, 6vw, 76px);
-
-    line-height: 1.05;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 35px;
-}
-
-.partnership h2 span {
-    color: #777;
-}
-
-.partnership p {
-    max-width: 720px;
-
-    font-size: 19px;
-
-    color: #555;
-
-    margin-bottom: 18px;
-}
-
-
-/* ================================
-   About
-   ================================ */
-
-.about-grid {
+.value-grid {
     display: grid;
 
     grid-template-columns:
@@ -388,10 +250,257 @@ nav a:hover {
     align-items: start;
 }
 
-.about-grid h2 {
-    font-size: clamp(38px, 5vw, 60px);
+.value-grid h2 {
+    font-size:
+        clamp(38px, 5vw, 62px);
 
-    line-height: 1.05;
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+.value-text {
+    font-size: 18px;
+
+    color: #555;
+}
+
+.value-text p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   General Section
+   ========================================= */
+
+.section {
+    padding: 120px 0;
+}
+
+.section-header {
+    max-width: 760px;
+
+    margin-bottom: 70px;
+}
+
+.section-header h2 {
+    font-size:
+        clamp(38px, 5vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.section-header p {
+    max-width: 680px;
+
+    font-size: 18px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   Services
+   ========================================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1px;
+
+    background: #ddd;
+
+    border:
+        1px solid #ddd;
+}
+
+.service-card {
+    background: #fff;
+
+    padding: 42px;
+
+    min-height: 390px;
+}
+
+.service-number {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #888;
+
+    margin-bottom: 38px;
+}
+
+.service-card h3 {
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+.service-card > p {
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    margin-bottom: 22px;
+}
+
+.service-card ul {
+    list-style: none;
+}
+
+.service-card li {
+    position: relative;
+
+    padding-left: 18px;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    color: #555;
+}
+
+.service-card li::before {
+    content: "—";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #aaa;
+}
+
+
+/* =========================================
+   Dark / Process Section
+   ========================================= */
+
+.dark {
+    background: #080b12;
+
+    color: #fff;
+}
+
+.light p {
+    color:
+        rgba(255, 255, 255, 0.58);
+}
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 55px 45px;
+}
+
+.process-step {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    padding-top: 25px;
+}
+
+.process-number {
+    font-size: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.4);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.process-step h3 {
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.process-step p {
+    font-size: 15px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================
+   Partnership
+   ========================================= */
+
+.partnership {
+    padding: 150px 0;
+
+    background: #eef0f3;
+}
+
+.partnership-content {
+    max-width: 900px;
+}
+
+.partnership h2 {
+    font-size:
+        clamp(44px, 6vw, 78px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 38px;
+}
+
+.partnership h2 span {
+    color: #777;
+}
+
+.partnership p {
+    max-width: 760px;
+
+    font-size: 19px;
+
+    color: #555;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   About
+   ========================================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+}
+
+.about-grid h2 {
+    font-size:
+        clamp(38px, 5vw, 60px);
+
+    line-height: 1.06;
 
     letter-spacing: -2px;
 }
@@ -411,16 +520,16 @@ nav a:hover {
 }
 
 
-/* ================================
+/* =========================================
    Contact
-   ================================ */
+   ========================================= */
 
 .contact {
-    padding: 130px 0;
-
-    background: #0d1118;
+    padding: 140px 0;
 
     color: #fff;
+
+    background: #0d1118;
 }
 
 .contact-content {
@@ -428,7 +537,8 @@ nav a:hover {
 }
 
 .contact h2 {
-    font-size: clamp(44px, 6vw, 76px);
+    font-size:
+        clamp(44px, 6vw, 76px);
 
     line-height: 1.05;
 
@@ -438,17 +548,20 @@ nav a:hover {
 }
 
 .contact p {
-    max-width: 600px;
+    max-width: 650px;
 
     font-size: 19px;
 
-    color: rgba(255, 255, 255, 0.6);
+    color:
+        rgba(255, 255, 255, 0.58);
 
-    margin-bottom: 35px;
+    margin-bottom: 12px;
 }
 
 .contact-email {
     display: inline-block;
+
+    margin-top: 25px;
 
     color: #fff;
 
@@ -457,22 +570,23 @@ nav a:hover {
     font-size: 22px;
 
     border-bottom:
-        1px solid rgba(255, 255, 255, 0.5);
+        1px solid rgba(255, 255, 255, 0.45);
 
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 }
 
 
-/* ================================
+/* =========================================
    Footer
-   ================================ */
+   ========================================= */
 
 footer {
-    background: #080b12;
-
-    color: rgba(255, 255, 255, 0.5);
-
     padding: 30px 0;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    background: #080b12;
 
     font-size: 13px;
 }
@@ -485,31 +599,38 @@ footer {
     align-items: center;
 }
 
-.footer-content strong {
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.footer-brand strong {
     color: #fff;
 
     letter-spacing: 3px;
-
-    margin-right: 15px;
 }
 
-.footer-content span {
-    color: rgba(255, 255, 255, 0.4);
+.footer-brand span {
+    color:
+        rgba(255, 255, 255, 0.38);
 }
 
 
-/* ================================
+/* =========================================
    Mobile
-   ================================ */
+   ========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
     nav {
         display: none;
     }
 
     .hero {
-        min-height: 650px;
+        min-height: 700px;
     }
 
     .hero h1 {
@@ -517,7 +638,7 @@ footer {
     }
 
     .hero-text {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .hero-buttons {
@@ -526,7 +647,13 @@ footer {
         align-items: flex-start;
     }
 
-    .capabilities-grid {
+    .value-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .services-grid {
         grid-template-columns: 1fr;
     }
 
@@ -552,5 +679,13 @@ footer {
         align-items: flex-start;
 
         gap: 15px;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
     }
 }
