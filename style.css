@@ -11,12 +11,10 @@ footer{background:var(--soft);padding:44px 0}.footer-grid{display:flex;justify-c
 @media(max-width:600px){.wrap{width:calc(100% - 32px)}.nav{height:70px}.logo img{width:180px}.nav nav a:not(:last-child){display:none}.hero{padding-top:70px}.hero-grid{gap:44px}h1{font-size:clamp(48px,11vw,65px)}h2{font-size:clamp(39px,9.5vw,54px)}.lead{font-size:18px}.actions{gap:18px;flex-wrap:wrap}.hero-image{height:285px;border-radius:17px 17px 0 0}.about,.expertise,.approach,.contact{padding:90px 0}.about-grid>div:last-child p{font-size:18px}.cards,.approach-grid{grid-template-columns:1fr}.card{border-radius:20px}.card>img{height:255px}.card-body{padding:28px}.section-head{margin-bottom:38px}.footer-grid{display:block}.footer-grid>div:last-child{text-align:left;margin-top:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* V17: split cinematic hero, image remains separate from HTML brand logo */
 @media(min-width:850px){.hero{padding:0;text-align:left;background:#edf3f9}.hero .wrap{width:100%;max-width:none}.hero-grid{display:grid;grid-template-columns:48% 52%;gap:0;align-items:stretch;min-height:600px}.hero-copy{max-width:650px;margin:0 0 0 auto;padding:95px 40px 70px max(30px,calc((100vw - 1180px)/2));align-self:center}.hero h1{font-size:clamp(52px,5.1vw,82px)}.hero .lead{font-size:18px;margin:0 0 30px;max-width:600px}.hero .actions{justify-content:flex-start}.hero-image{height:auto;min-height:600px;border-radius:0}.hero-image img{object-position:55% center}.hero .image-note{bottom:25px;right:24px}}
 @media(max-width:849px){.hero-image img{object-position:center}}
 .logo img,.footer-grid img{image-rendering:auto}
 
-/* V18: carefully balanced first-screen composition */
 .menu-toggle{display:none}
 .hero{background:#edf3f9}
 .hero h1{letter-spacing:-.058em;text-wrap:balance}
@@ -71,7 +69,6 @@ footer{background:var(--soft);padding:44px 0}.footer-grid{display:flex;justify-c
 }
 @media(max-width:380px){.hero h1{font-size:41px}.hero .actions{flex-direction:column;align-items:flex-start}.hero-image{height:235px}}
 
-/* V19: contained hero — consistent margins on both sides */
 .hero{background:#fff}
 .hero .wrap{width:min(1280px,calc(100% - 80px));max-width:1280px;margin-inline:auto}
 @media(min-width:850px){
