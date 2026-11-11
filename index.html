@@ -296,18 +296,21 @@ if (loop && toggle) {
   }
   show();
 }
-// The teaser in WeChat's own browser: there a video with the browser's controls is handed to WeChat's own player, whose
-// picture froze while its timeline ran on, while the hero's loop (muted, without controls) played (the owner,
-// 2026-11-10). So there the teaser plays the same way: muted (it has no sound), started and paused with a tap.
+// The teaser plays with SULAND's own round button in its middle, and a tap on the picture, in every browser: the
+// browsers' own controls covered the typed sentences and captions along its bottom, and WeChat handed a video with
+// controls to its own player, which froze the picture (the owner, 2026-11-10). Muted: it has no sound. Without the
+// script the browser's controls stay.
 const teaser = document.getElementById('teaser'), teaserPlay = document.querySelector('.teaser-play');
-if (teaser && teaserPlay && /MicroMessenger/i.test(navigator.userAgent)) {
+if (teaser && teaserPlay) {
   teaser.removeAttribute('controls');
   teaser.muted = true;
   teaser.setAttribute('muted', '');
+  teaser.setAttribute('tabindex', '0');  // Space or Enter on it plays and pauses.
   const sync = () => { teaserPlay.hidden = !teaser.paused; };
   const flip = () => { if (teaser.paused) { const started = teaser.play(); if (started) started.catch(() => {}); } else teaser.pause(); };
-  teaserPlay.addEventListener('click', flip);
+  teaserPlay.addEventListener('click', () => { flip(); teaser.focus({ preventScroll: true }); });
   teaser.addEventListener('click', flip);
+  teaser.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
   ['play', 'pause', 'ended'].forEach(name => teaser.addEventListener(name, sync));
   sync();
 }
