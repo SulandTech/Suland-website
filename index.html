@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <video id="hero-loop" autoplay muted loop playsinline preload="metadata" poster="assets/hero-loop-poster.jpg" width="1066" height="776" aria-label="SULAND Studio in simulation: a robot arm moves six parts from one tote to another">
+      <video id="hero-loop" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/hero-loop-poster.jpg" width="1066" height="776" aria-label="SULAND Studio in simulation: a robot arm moves six parts from one tote to another">
         <source src="assets/hero-loop.mp4" type='video/mp4; codecs="avc1.640029"'>
         <source src="assets/hero-loop.webm" type='video/webm; codecs="vp9"'>
       </video>
@@ -133,7 +133,7 @@
     </div>
 
     <figure class="demo-video">
-      <video controls playsinline preload="none" poster="assets/teaser-poster.jpg" width="1066" height="776" aria-label="SULAND Studio teaser: a robot cell described in one sentence, built step by step in 3D and picking six parts in simulation, then a second robot and a new layout, each asked for in one sentence">
+      <video controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/teaser-poster.jpg" width="1066" height="776" aria-label="SULAND Studio teaser: a robot cell described in one sentence, built step by step in 3D and picking six parts in simulation, then a second robot and a new layout, each asked for in one sentence">
         <source src="assets/teaser.mp4" type='video/mp4; codecs="avc1.640029"'>
         <source src="assets/teaser.webm" type='video/webm; codecs="vp9"'>
         <a href="assets/teaser.mp4">Open the teaser (MP4)</a>
@@ -285,6 +285,7 @@ if (loop && toggle) {
   loop.addEventListener('play', show);
   loop.addEventListener('pause', show);
   toggle.addEventListener('click', () => { wanted = loop.paused; if (wanted) play(); else loop.pause(); });
+  document.addEventListener('WeixinJSBridgeReady', () => { if (wanted) play(); });  // WeChat's own browser.
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) loop.pause(); else if (wanted) play();
