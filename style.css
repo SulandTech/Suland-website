@@ -83,6 +83,11 @@ p { color: var(--muted); line-height: 1.7; }
 .demo .section-head > p { color: #c2ccd6; }
 .demo-video { margin: 0 auto; max-width: 1066px; }
 .demo-video video { width: 100%; aspect-ratio: 1066 / 776; background: #000; border-radius: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, .4); }
+.teaser-frame { position: relative; }
+/* The teaser's own play button, shown only in WeChat's browser (index.html's script). */
+.teaser-play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; padding: 0; border: 0; border-radius: 50%; background: #11283bbd; color: white; display: grid; place-items: center; cursor: pointer; }
+.teaser-play[hidden] { display: none; }
+.teaser-play svg { width: 26px; height: 26px; margin-left: 4px; fill: currentColor; }
 .demo-video figcaption { font-size: 13px; line-height: 1.7; color: #9fb0c0; text-align: center; margin-top: 18px; }
 .demo-cta { text-align: center; margin: 48px auto 0; max-width: 960px; }
 .demo-cta p { font-size: 15px; color: #c2ccd6; margin: 18px 0 0; }
