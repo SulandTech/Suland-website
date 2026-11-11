@@ -306,12 +306,20 @@ if (teaser && teaserPlay) {
   teaser.muted = true;
   teaser.setAttribute('muted', '');
   teaser.setAttribute('tabindex', '0');  // Space or Enter on it plays and pauses.
-  const sync = () => { teaserPlay.hidden = !teaser.paused; };
-  const flip = () => { if (teaser.paused) { const started = teaser.play(); if (started) started.catch(() => {}); } else teaser.pause(); };
+  const stopped = () => teaser.paused || teaser.ended;
+  const sync = () => { teaserPlay.hidden = !stopped(); };
+  // Played to its end, it starts again from the beginning on the first tap: some browsers leave an ended video
+  // marked as playing, or at its end, so that a tap paused it or ended it again at once (the owner, 2026-11-11).
+  const flip = () => {
+    if (!stopped()) { teaser.pause(); return; }
+    if (teaser.ended || (teaser.duration && teaser.currentTime >= teaser.duration - 0.2)) teaser.currentTime = 0;
+    const started = teaser.play(); if (started) started.catch(() => {});
+  };
   teaserPlay.addEventListener('click', () => { flip(); teaser.focus({ preventScroll: true }); });
   teaser.addEventListener('click', flip);
   teaser.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
-  ['play', 'pause', 'ended'].forEach(name => teaser.addEventListener(name, sync));
+  teaser.addEventListener('ended', () => { teaser.pause(); teaser.currentTime = 0; sync(); });
+  ['play', 'playing', 'pause'].forEach(name => teaser.addEventListener(name, sync));
   sync();
 }
 </script>
