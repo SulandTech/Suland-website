@@ -1,0 +1,216 @@
+/* SULAND website. */
+
+/* Inter, by the Inter Project Authors (SIL Open Font License 1.1, assets/fonts/LICENSE.txt): Latin text, weights 400
+   to 700 in one file. */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root { --ink: #15171b; --muted: #5f6670; --blue: #086ad8; --soft: #f5f5f7; --dark: #111d2a; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; background: white; color: var(--ink); font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img, video { display: block; max-width: 100%; height: auto; }
+.wrap { width: min(1180px, calc(100% - 52px)); margin: auto; }
+.skip { position: absolute; top: -100px; left: 10px; background: white; padding: 10px; z-index: 99; }
+.skip:focus { top: 10px; }
+
+/* Header */
+header { position: sticky; top: 0; background: #ffffffed; backdrop-filter: blur(18px); border-bottom: 1px solid #eceef1; z-index: 30; }
+.nav { height: 78px; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.logo img { width: 220px; }
+.nav nav { display: flex; gap: 32px; font-size: 13px; color: #444c56; }
+.nav nav a:hover { color: var(--blue); }
+.menu-toggle { display: none; }
+
+/* Type */
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { letter-spacing: -.058em; font-weight: 600; }
+h1, h2 { text-wrap: balance; }
+h1 { font-size: clamp(60px, 8.4vw, 108px); line-height: 1.01; margin: 0 0 27px; }
+h1 span { color: var(--blue); }
+h2 { font-size: clamp(42px, 6vw, 73px); line-height: 1.08; margin-bottom: 28px; }
+h3 { font-size: clamp(26px, 3vw, 37px); line-height: 1.15; margin-bottom: 15px; }
+p { color: var(--muted); line-height: 1.7; }
+.eyebrow { font-size: 11px; letter-spacing: .13em; font-weight: 700; color: var(--blue); margin-bottom: 21px; }
+
+/* Hero */
+.hero { padding: 56px 0 72px; text-align: left; background: white; }
+.hero .wrap { width: min(1280px, calc(100% - 80px)); max-width: 1280px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 45%) minmax(0, 55%); gap: 0; align-items: center; }
+.hero-copy { padding: 40px 40px 40px 0; }
+.hero h1 { font-size: clamp(40px, 3.9vw, 60px); line-height: 1.075; }
+.lead { font-size: 17px; line-height: 1.68; max-width: 500px; margin: 0 0 31px; }
+.for-whom { font-size: 15px; font-weight: 600; color: var(--ink); max-width: 500px; margin: -14px 0 30px; }
+.actions { display: flex; align-items: center; gap: 21px; flex-wrap: wrap; }
+.btn { background: var(--blue); color: white; border-radius: 999px; padding: 14px 24px; font-size: 14px; font-weight: 600; display: inline-block; }
+.btn:hover { background: #0759b6; }
+.subtle-link { font-size: 14px; color: var(--blue); }
+/* The 3D view's own black behind the loop, so nothing light shows before its first frame. */
+.hero-image { height: 560px; position: relative; border-radius: 20px; overflow: hidden; background: #000; }
+.hero-image video, .hero-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.image-note { position: absolute; bottom: 25px; right: 24px; background: #11283bbd; color: white; padding: 9px 13px; border-radius: 20px; font-size: 11px; letter-spacing: .075em; }
+.image-note .note-rest { opacity: .85; }
+.loop-toggle { position: absolute; left: 20px; bottom: 18px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #11283bbd; color: white; display: grid; place-items: center; cursor: pointer; }
+.loop-toggle:hover { background: #11283b; }
+.loop-toggle svg { width: 14px; height: 14px; fill: currentColor; }
+.loop-toggle .play, .loop-toggle.is-paused .pause { display: none; }
+.loop-toggle.is-paused .play { display: block; }
+
+/* How it works: the problem in a line, then the four steps, on the light ground */
+.how { background: var(--soft); padding: 130px 0; }
+.steps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.step { background: white; border-radius: 22px; padding: 34px 30px 38px; }
+.step h3 { font-size: clamp(22px, 1.9vw, 26px); letter-spacing: -.03em; margin-bottom: 12px; }
+.step p { font-size: 16px; line-height: 1.7; margin: 0; }
+
+/* About */
+.about { background: var(--soft); padding: 145px 0; }
+.about-grid { text-align: center; max-width: 860px; margin: auto; }
+.about-grid > div:last-child { max-width: 760px; margin: auto; }
+.about-grid > div:last-child p { font-size: 20px; line-height: 1.65; }
+.about-grid > div:last-child p + p { font-size: 17px; }
+
+/* Demo: the teaser, at the 3D view's own pixels at most, and the request for the full demo, on the dark ground */
+.demo { background: var(--dark); color: white; padding: 145px 0; }
+.demo .eyebrow { color: #8dbdff; }
+.demo .section-head > p { color: #c2ccd6; }
+.demo-video { margin: 0 auto; max-width: 1066px; }
+.demo-video video { width: 100%; aspect-ratio: 1066 / 776; background: #000; border-radius: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, .4); }
+.demo-video figcaption { font-size: 13px; line-height: 1.7; color: #9fb0c0; text-align: center; margin-top: 18px; }
+.demo-cta { text-align: center; margin: 48px auto 0; max-width: 960px; }
+.demo-cta p { font-size: 15px; color: #c2ccd6; margin: 18px 0 0; }
+.tech-line { text-align: center; font-size: 15px; color: #c2ccd6; max-width: 900px; margin: 64px auto 0; }
+
+/* Capabilities */
+.expertise { padding: 140px 0; }
+.section-head { text-align: center; max-width: 850px; margin: 0 auto 64px; }
+.section-head > p { font-size: 18px; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.card { background: var(--soft); border-radius: 25px; overflow: hidden; display: flex; flex-direction: column; }
+/* Stills of the product, each 16:9: shown whole at every width, never cut. */
+.card > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.card-body { padding: 36px 38px 43px; flex: 1; }
+.number { display: block; font-size: 11px; color: var(--blue); font-weight: 700; letter-spacing: .1em; margin-bottom: 18px; }
+.card-body p { font-size: 16px; line-height: 1.75; margin-bottom: 0; }
+
+/* Roadmap */
+.approach { background: var(--dark); color: white; padding: 145px 0; }
+.approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.approach .eyebrow { color: #8dbdff; }
+.approach-grid > div:first-child > p:last-child { font-size: 17px; color: #c2ccd6; }
+.steps { border-top: 1px solid #455362; }
+.steps > div { display: grid; grid-template-columns: 46px 1fr; gap: 16px; border-bottom: 1px solid #455362; padding: 24px 0; }
+.steps b { color: #8dbdff; font-size: 12px; letter-spacing: .08em; }  /* NOW, NEXT, GOAL: the roadmap's stages. */
+.steps h3 { font-size: 23px; letter-spacing: -.03em; margin-bottom: 7px; }
+.steps p { font-size: 15px; color: #c2ccd6; margin: 0; }
+
+/* Contact */
+.contact { padding: 145px 0; text-align: center; }
+.contact-grid { max-width: 800px; margin: auto; }
+.contact-grid p:not(.eyebrow) { font-size: 19px; }
+.contact-grid .btn { margin-top: 18px; }
+
+/* Footer */
+footer { background: var(--soft); padding: 44px 0; }
+.footer-grid { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+.footer-grid img { width: 180px; }
+.footer-grid p { font-size: 11px; margin: 8px 0 0; }
+.footer-grid > div:last-child { text-align: right; max-width: 620px; }
+.legal { margin-top: 28px; padding-top: 22px; border-top: 1px solid #e1e4e8; }
+.legal p { font-size: 11px; line-height: 1.7; margin: 0 0 8px; }
+.legal summary { font-size: 11px; color: #444c56; cursor: pointer; margin-bottom: 8px; }
+.legal summary:hover { color: var(--blue); }
+
+@media (max-width: 1100px) and (min-width: 850px) {
+  .hero .wrap { width: calc(100% - 64px); }
+  .hero-grid { grid-template-columns: 46% 54%; }
+  .hero-copy { padding: 28px 28px 28px 0; }
+  .hero-image { height: 480px; }
+}
+
+@media (max-width: 849px) {
+  /* The navigation as a menu: its links no longer fit beside the logo. */
+  .nav { position: relative; }
+  .menu-toggle { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; border: 1px solid #e1e5ea; border-radius: 12px; background: white; cursor: pointer; }
+  .menu-toggle span { width: 20px; height: 2px; background: #15253c; border-radius: 2px; }
+  .nav nav { display: none; position: absolute; top: calc(100% - 2px); left: -26px; right: -26px; background: white; box-shadow: 0 18px 24px rgba(10, 28, 50, .12); padding: 16px 25px 24px; flex-direction: column; gap: 0; border-bottom: 1px solid #e1e5ea; }
+  .nav nav.is-open { display: flex; }
+  .nav nav a { display: block; padding: 13px 0; font-size: 16px; border-bottom: 1px solid #eef0f3; }
+
+  .hero { padding: 56px 0 64px; }
+  .hero .wrap { width: calc(100% - 48px); }
+  .hero-grid { display: flex; flex-direction: column; gap: 32px; align-items: stretch; }
+  .hero-copy { padding: 0; }
+  .hero h1 { font-size: clamp(40px, 7.4vw, 64px); }
+  /* The loop whole, in its own proportions (776 / 1066), by padding so that it holds in every browser. */
+  .hero-image { height: 0; padding-top: 72.8%; }
+  .approach-grid { gap: 40px; }
+  .footer-grid > div:last-child { max-width: 380px; }
+}
+
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 32px); }
+  .nav { height: 70px; }
+  .logo img { width: 170px; }
+  .nav nav { left: -16px; right: -16px; }
+  .hero { padding: 48px 0 60px; }
+  .hero .wrap { width: calc(100% - 32px); }
+  .hero-grid { gap: 30px; }
+  .hero h1 { font-size: clamp(34px, 9vw, 50px); }
+  .lead { font-size: 16px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .step { border-radius: 18px; padding: 28px; }
+  .hero-image { border-radius: 16px; }
+  /* Two lines on a phone, so that the note stays clear of the pause button at the picture's other corner. */
+  .image-note { bottom: 16px; right: 14px; text-align: right; line-height: 1.45; }
+  .image-note .note-rest { display: block; }
+  .image-note .note-sep { display: none; }
+  .loop-toggle { left: 12px; bottom: 10px; }
+  h2 { font-size: clamp(39px, 9.5vw, 54px); }
+  .about, .expertise, .approach, .contact, .demo, .how { padding: 90px 0; }
+  .about-grid > div:last-child p { font-size: 18px; }
+  .cards, .approach-grid { grid-template-columns: 1fr; }
+  .card { border-radius: 20px; }
+  .card-body { padding: 28px; }
+  .section-head { margin-bottom: 38px; }
+  .demo-video video { border-radius: 14px; }
+  .tech-line { margin-top: 44px; }
+  .footer-grid { display: block; }
+  .footer-grid > div:last-child { text-align: left; margin-top: 20px; max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Desktop content scale and breathing room. */
+@media (min-width: 1200px) {
+  .wrap { width: min(1534px, calc(100% - 64px)); }
+  .hero .wrap { width: min(1664px, calc(100% - 80px)); max-width: 1664px; }
+  .hero { padding: 72px 0 94px; }
+  .hero h1 { font-size: clamp(50px, 4.2vw, 72px); }
+  .hero-image { height: clamp(560px, 43vw, 680px); }
+  .lead { max-width: 650px; font-size: 20px; }
+  .for-whom { max-width: 650px; font-size: 16px; }
+  .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .step p { font-size: 17px; }
+  .nav nav { font-size: 15px; }
+  .section-head { max-width: 1060px; }
+  .about-grid { max-width: 1100px; }
+  .about-grid > div:last-child { max-width: 950px; }
+  .contact-grid { max-width: 1040px; }
+  .card-body { padding: 44px 48px 52px; }
+  .card-body p { font-size: 18px; }
+  .approach-grid { gap: 110px; }
+  .steps h3 { font-size: 27px; }
+  .steps p { font-size: 17px; }
+  .demo-cta p { font-size: 16px; }
+  .tech-line { font-size: 17px; }
+}
